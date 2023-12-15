@@ -1,0 +1,14 @@
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\bin\Debug\netcoreapp3.1\LinQ.exe
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\bin\Debug\netcoreapp3.1\LinQ.deps.json
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\bin\Debug\netcoreapp3.1\LinQ.runtimeconfig.json
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\bin\Debug\netcoreapp3.1\LinQ.runtimeconfig.dev.json
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\bin\Debug\netcoreapp3.1\LinQ.dll
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\bin\Debug\netcoreapp3.1\LinQ.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\obj\Debug\netcoreapp3.1\LinQ.csproj.AssemblyReference.cache
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\obj\Debug\netcoreapp3.1\LinQ.GeneratedMSBuildEditorConfig.editorconfig
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\obj\Debug\netcoreapp3.1\LinQ.AssemblyInfoInputs.cache
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\obj\Debug\netcoreapp3.1\LinQ.AssemblyInfo.cs
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\obj\Debug\netcoreapp3.1\LinQ.csproj.CoreCompileInputs.cache
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\obj\Debug\netcoreapp3.1\LinQ.dll
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\obj\Debug\netcoreapp3.1\LinQ.pdb
+E:\All Code Web\ASP.NET MVC (CODE)\LinQ\LinQ\obj\Debug\netcoreapp3.1\LinQ.genruntimeconfig.cache

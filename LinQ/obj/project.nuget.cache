@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UQ4K1XIJQPCsWiw3e19hpcGuJ4pBj9VUf8jic5E4N3QNAb0HuXw8wR3Oi4AHnSQ+0P/oh/uv3CRk4J1fLwEXeQ==",
+  "success": true,
+  "projectFilePath": "E:\\All Code Web\\ASP.NET MVC (CODE)\\LinQ\\LinQ\\LinQ.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\An Viet Computer\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}
