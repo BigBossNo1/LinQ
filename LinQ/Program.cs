@@ -42,14 +42,14 @@ namespace LinQ
 
             var products = new List<Product>()
             {
-            new Product(1, "Bàn trà",    400, new string[] {"Xám", "Xanh"},         2),
+            new Product(1, "Bàn trà",    350, new string[] {"Xám", "Xanh"},         2),
             new Product(2, "Tranh treo", 400, new string[] {"Vàng", "Xanh"},        1),
-            new Product(3, "Đèn trùm",   500, new string[] {"Trắng"},               3),
+            new Product(3, "Đèn trùm",   500, new string[] {"Trắng" , "Xanh"},      3),
             new Product(4, "Bàn học",    200, new string[] {"Trắng", "Xanh"},       1),
             new Product(5, "Túi da",     300, new string[] {"Đỏ", "Đen", "Vàng"},   1),
             new Product(6, "Giường ngủ", 500, new string[] {"Trắng"},               3),
             new Product(7, "Tủ áo",      600, new string[] {"Trắng"},               3),
-            new Product(8, "Áo khoác",      400,new string[] {"Đỏ", "Đen", "Vàng"},   2),
+            new Product(8, "Áo khoác",      450,new string[] {"Đỏ", "Đen", "Vàng"},   2),
             new Product(9, "Ghế ngồi",      500, new string[] {"Đỏ", "Đen", "Vàng"},   2),
             new Product(10, "Đèn cây",      999,new string[] {"Đỏ", "Đen", "Vàng"},   1),
             };
@@ -64,13 +64,13 @@ namespace LinQ
 
             // WHERE + ORDERBY
             //1. Where
-            var query1 = products.Where(x => x.Name.Contains("tr") && x.Brand == 2).Select(y=>y.Name);
+            var query1 = products.Where(x => x.Name.Contains("tr") && x.Brand == 2).Select(y => y.Name);
             foreach (var item in query1)
             {
                 //Console.WriteLine(item);
             }
             //2. Where + OrderBy 
-            var query2 = products.Where(x => x.Price > 400).OrderBy(y=>y.Price);
+            var query2 = products.Where(x => x.Price > 400).OrderBy(y => y.Price);
             foreach (var item in query2)
             {
                 //Console.WriteLine(item);
@@ -79,7 +79,7 @@ namespace LinQ
 
             // WHERE + SELECT
             //1. Where
-            var query3 = products.Where(x=>x.Name.Contains('T')).Select(y=>y.Name + "Price = "+y.Price);
+            var query3 = products.Where(x => x.Name.Contains('T')).Select(y => y.Name + "Price = " + y.Price);
             foreach (var item in query3)
             {
                 //Console.WriteLine(item);
@@ -94,16 +94,16 @@ namespace LinQ
             //MIN , MAX , SUM , AVG 
             //1. Max
             var query5 = products.Select(y => y.Price).Max();
-                //Console.WriteLine("Price have max value is : " + query5);
+            //Console.WriteLine("Price have max value is : " + query5);
             //2. Min
-            var query6 = products.Where(x => x.Brand == 2 && x.Price > 100).OrderByDescending(y => y.Price).Select(z=>z.Price).FirstOrDefault();
-                //Console.WriteLine("Price have max value is : " + query6);
+            var query6 = products.Where(x => x.Brand == 2 && x.Price > 100).OrderByDescending(y => y.Price).Select(z => z.Price).FirstOrDefault();
+            //Console.WriteLine("Price have max value is : " + query6);
             //3. Sum
             var query7 = products.Where(x => x.Brand == 1).Select(x => x.Price).Sum();
-                //Console.WriteLine("Summary of price : " + query7);
+            //Console.WriteLine("Summary of price : " + query7);
             //4. Avg
-            var query8 = products.Where(x => x.Price % 2 == 0 && x.Price > 500).Select(x=>x.Price).Average();
-                //Console.WriteLine("Avg of price is : " + query8);
+            var query8 = products.Where(x => x.Price % 2 == 0 && x.Price > 500).Select(x => x.Price).Average();
+            //Console.WriteLine("Avg of price is : " + query8);
             //--------------------------------------------------------------------------
 
             //JOIN
@@ -146,7 +146,7 @@ namespace LinQ
             //------------------------------------------------------------------------------------
             //ORDERBY - ORDERBYDESCENDING ()
             // 1. OrderBy (Xắp xếp tăng dần)
-            var query13 = products.OrderBy(x=>x.Price);
+            var query13 = products.OrderBy(x => x.Price);
             foreach (var item in query13)
             {
                 //Console.WriteLine(item);
@@ -158,7 +158,7 @@ namespace LinQ
                 //Console.WriteLine(item);
             }
 
-             // products.OrderByDescending(x => x.Price).ToList().ForEach(p=> Console.WriteLine(p));
+            // products.OrderByDescending(x => x.Price).ToList().ForEach(p=> Console.WriteLine(p));
 
             //------------------------------------------------------------------------------------
             //REVSER (Đảo ngược thứ tự in ra )
@@ -170,13 +170,13 @@ namespace LinQ
 
             //------------------------------------------------------------------------------------
             //GROUPBY (Tập hợp)
-            var query16 = products.Where(x=>x.Price == 500).GroupBy(x => x.Price);
-            foreach(var group in query16)
+            var query16 = products.Where(x => x.Price == 500).GroupBy(x => x.Price);
+            foreach (var group in query16)
             {
-               // Console.WriteLine(group.Key);
-                foreach(var item in group)
+                // Console.WriteLine(group.Key);
+                foreach (var item in group)
                 {
-                   // Console.WriteLine(item.Name);
+                    // Console.WriteLine(item.Name);
                 }
             }
 
@@ -193,7 +193,7 @@ namespace LinQ
              - SingleOrdefault : là nếu không tìm thấy phần tử nào thì sẽ trả về Null còn nếu nhiều hơn 1 phần tử thì vẫn phát sing lỗi
              */
             var query17 = products.SingleOrDefault(x => x.Price == 999);
-            if(query17 != null)
+            if (query17 != null)
             {
                 //Console.WriteLine("Number is " + query17);
             }
@@ -205,9 +205,9 @@ namespace LinQ
             //------------------------------------------------------------------------------------
             //ANY (Trả về true nếu thỏa mãn 1 điều kiện Logic)
             var query18 = products.Any(x => x.Price == 600);
-            if(query18 == true)
+            if (query18 == true)
             {
-               //Console.WriteLine("Success");
+                //Console.WriteLine("Success");
             }
             else
             {
@@ -229,8 +229,91 @@ namespace LinQ
 
             //------------------------------------------------------------------------------------
             //COUNT (Đếm số lượng)
-            var count = products.Count(x=>x.Price > 500);
-            Console.WriteLine(count);
+            var count = products.Count(x => x.Price > 500);
+            //Console.WriteLine(count);
+
+            //------------------------------------------------------------------------------------
+            //TRUY VAN LINQ 
+            /*
+             - 1, Xác định nguồn : IEnumerable , Array ....
+             - 2, Câu truy vấn : From tenPhanTu in nguồn ... where , orderby 
+             - 3, Lấy dữ liệu : select , group by ....
+             */
+            // Select
+            var query20 = from p in products
+                          from color in p.Colors
+                          where p.Price > 100 && color == "Xanh"
+                          orderby p.Price
+                          select new
+                          {
+                              Ten = p.Name,
+                              Gia = p.Price,
+                              Mau = color,
+                          };
+            //query20.ToList().ForEach(x => Console.WriteLine(x));
+            // GroupBy 
+            var query21 = from p in products
+                          group p by p.Price;
+            query21.ToList().ForEach(group =>
+            {
+                //Console.WriteLine(group.Key);
+                //group.ToList().ForEach(p => Console.WriteLine(p));
+            });
+            // Join
+            var query22 = from product in products
+                          join brand in brands on
+                          product.Brand equals brand.ID
+                          where product.Price > 500
+                          select new
+                          {
+                              Name = product.Name,
+                              Price = product.Price,
+                              NameBrand = brand.Name
+                          };
+            // query22.ToList().ForEach(x => Console.WriteLine(x));
+
+            var query23 = from product in products
+                          join brand in brands on
+                          product.Brand equals brand.ID
+                          where product.ID > 5 && product.Price > 400
+                          select new
+                          {
+                              MaSanPham = product.ID,
+                              TenSanPham = product.Name,
+                              MaSanXuat = product.Brand,
+                              NhaSanXuat = brand.Name,
+                              Gia = product.Price,
+                          };
+            query23.ToList().ForEach(x =>
+            {
+                //Console.WriteLine($"Ten san pham : {x.TenSanPham} : Ma san xuat  {x.MaSanXuat} : Nha san xuat {x.NhaSanXuat}  : Gia {x.Gia} : Ma san pham {x.MaSanPham}");
+            });
+
+            //-------------------------------------------------------------------------------------
+            // PA 
+            var query24 = products.Where(x => x.Price > 300 && x.Price < 500).OrderByDescending(x => x.Price).Join(brands, p => p.Brand, b => b.ID, (p, b) => "Name : " + p.Name + "-> Thuong Hieu : " + b.Name);
+            foreach (var item in query24)
+            {
+                //Console.WriteLine(item);
+            }
+
+            var query25 = from product in products
+                          join brand in brands on
+                          product.Brand equals brand.ID
+                          where product.Price > 500 && product.Brand ==1
+                          select new
+                          {
+                              Ten = product.Name,
+                              Gia = product.Price,
+                              NhaSX = brand.Name
+                          };
+            query25.ToList().ForEach(x =>
+            {
+                Console.WriteLine("Ten : " + x.Ten);
+                Console.WriteLine("Gia Ban : " + x.Gia);
+                Console.WriteLine("Thuong Hieu : " + x.NhaSX);
+                Console.WriteLine("---------_-_-------" );
+            });
 
         }
     }
